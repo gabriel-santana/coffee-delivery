@@ -1,11 +1,26 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  background-color: ${(props) => props.theme.background};
+
+  position: fixed;
+
+  width: 100%;
+
+  margin-top: -6rem;
+`
+
+export const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  margin: 2rem 0;
+  width: 70rem;
+
+  margin: auto;
+  padding: 2rem 0;
+  left: 0;
+  right: 0;
 
   img {
     width: 5.25rem;

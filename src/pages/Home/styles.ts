@@ -84,4 +84,15 @@ export const TitleContainer = styled.div`
     }
   }
 `
-export const ContentContainer = styled.div``
+export const ContentContainer = styled.div`
+  width: 70rem;
+  margin: 5.75rem auto;
+`
+
+export const ListProductContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 3.375rem;
+`

@@ -1,7 +1,14 @@
 import CoffeDeliveryImage from '../../assets/coffee_delivery_image.png'
-import { TitleContainer, BackgroundContainer, ContentContainer } from './styles'
+import {
+  TitleContainer,
+  BackgroundContainer,
+  ContentContainer,
+  ListProductContainer,
+} from './styles'
 
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react'
+
+import { Card } from './components/card'
 
 export function Home() {
   return (
@@ -59,6 +66,12 @@ export function Home() {
 
       <ContentContainer>
         <h2>Nossos cafés</h2>
+        <ListProductContainer>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </ListProductContainer>
       </ContentContainer>
     </>
   )

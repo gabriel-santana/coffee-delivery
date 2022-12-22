@@ -75,7 +75,6 @@ export const Navigation = styled.div`
       background: ${(props) => props.theme['yellow-dark']};
       color: ${(props) => props.theme.white};
 
-      position: absolute;
       display: flex;
       flex-direction: row;
       justify-content: center;

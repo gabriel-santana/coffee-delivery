@@ -4,6 +4,7 @@ export const HeaderContainer = styled.header`
   background-color: ${(props) => props.theme.background};
 
   position: fixed;
+  z-index: 10;
 
   width: 100%;
 
@@ -15,7 +16,19 @@ export const HeaderContent = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  width: 70rem;
+  max-width: 70rem;
+
+  @media (max-width: 1150px) {
+    & {
+      max-width: 80%;
+    }
+  }
+
+  @media (max-width: 720px) {
+    & {
+      max-width: 90%;
+    }
+  }
 
   margin: auto;
   padding: 2rem 0;

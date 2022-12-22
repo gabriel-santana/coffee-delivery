@@ -16,16 +16,42 @@ export const BackgroundContainer = styled.div`
   width: 100%;
   height: 34rem;
 
+  @media (max-width: 1150px) {
+    & {
+      height: 52rem;
+    }
+  }
+
+  @media (max-width: 720px) {
+    & {
+      height: 57rem;
+    }
+  }
+
   margin-top: 6rem;
 
   border: transparent solid 1px;
 `
 
 export const TitleContainer = styled.div`
-  width: 70rem;
+  max-width: 70rem;
   margin: 5.75rem auto;
 
   display: flex;
+
+  @media (max-width: 1150px) {
+    & {
+      flex-direction: column;
+      max-width: 80%;
+      margin: 3rem auto;
+    }
+  }
+
+  @media (max-width: 720px) {
+    & {
+      max-width: 90%;
+    }
+  }
 
   gap: 3.5rem;
 
@@ -46,9 +72,18 @@ export const TitleContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     gap: 2.5rem;
     margin-top: 2.875rem;
+
+    @media (max-width: 1150px) {
+      & {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;
+        gap: 0.125rem;
+      }
+    }
 
     p {
       display: flex;
@@ -83,16 +118,34 @@ export const TitleContainer = styled.div`
       }
     }
   }
+
+  img {
+    max-width: 476px;
+  }
 `
 export const ContentContainer = styled.div`
-  width: 70rem;
+  max-width: 70rem;
   margin: 5.75rem auto;
+
+  @media (max-width: 1150px) {
+    & {
+      max-width: 80%;
+    }
+  }
+
+  @media (max-width: 720px) {
+    & {
+      max-width: 70%;
+    }
+  }
 `
 
 export const ListProductContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 100%;
 
-  margin-top: 3.375rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  column-gap: 2rem;
+  row-gap: 2.5rem;
+  margin-top: 3.5rem;
 `

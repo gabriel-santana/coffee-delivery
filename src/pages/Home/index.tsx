@@ -16,10 +16,7 @@ export function Home() {
       <BackgroundContainer>
         <TitleContainer>
           <div>
-            <h1>
-              Encontre o café perfeito
-              <br /> para qualquer hora do dia
-            </h1>
+            <h1>Encontre o café perfeito para qualquer hora do dia</h1>
             <p>
               Com o Coffee Delivery você recebe seu café onde estiver, a
               qualquer hora
@@ -67,6 +64,9 @@ export function Home() {
       <ContentContainer>
         <h2>Nossos cafés</h2>
         <ListProductContainer>
+          <Card />
+          <Card />
+          <Card />
           <Card />
           <Card />
           <Card />

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import introBackgroundImg from "../../../../assets/intro-background.png";
-import { rgba } from "polished";
 import { TitleText } from "../../../../components/Typography";
+import { rgba } from "polished";
 
 export const IntroContainer = styled.section`
   width: 100%;
   height: 34rem;
+
   background: ${({ theme }) => `url(${introBackgroundImg}) no-repeat center,
       linear-gradient(
         0deg,
@@ -14,13 +15,14 @@ export const IntroContainer = styled.section`
         ${theme.colors["base-background"]} 100%
       )`};
   background-size: cover;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const IntroContent = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -1,17 +1,17 @@
+import { InfoWithIconContainer, IconContainer } from "./styles";
 import { ReactNode } from "react";
-import { IconContainer, InfoWithIconContainer } from "./styles";
 
-interface InfoWithIconProps {
+interface BenefitItemProps {
   icon: ReactNode;
   text: string | ReactNode;
   iconBg: string;
 }
 
-export function InfoWithIcon({ icon, text, iconBg }: InfoWithIconProps) {
+export function InfoWithIcon({ icon, text, iconBg }: BenefitItemProps) {
   return (
     <InfoWithIconContainer>
       <IconContainer iconBg={iconBg}>{icon}</IconContainer>
       {typeof text === "string" ? <p>{text}</p> : text}
     </InfoWithIconContainer>
-  )
+  );
 }

@@ -1,8 +1,17 @@
-import { ShoppingCart } from "phosphor-react";
 import { QuantityInput } from "../../../../components/QuantityInput";
 import { RegularText, TitleText } from "../../../../components/Typography";
+import {
+  CoffeeCardContainer,
+  Tags,
+  Name,
+  Description,
+  CardFooter,
+  AddCartWrapper,
+} from "./styles";
+import { ShoppingCart } from "phosphor-react";
+import { useState } from "react";
+import { useCart } from "../../../../hooks/useCart";
 import { formatMoney } from "../../../../utils/formatMoney";
-import { AddCartWrapper, CardFooter, CoffeeCardContainer, Description, Name, Tags } from "./styles";
 
 export interface Coffee {
   id: number;
@@ -18,13 +27,35 @@ interface CoffeeProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
-  const formattedPrice = formatMoney(coffee.price)
+  const [quantity, setQuantity] = useState(1);
+
+  function handleIncrease() {
+    setQuantity((state) => state + 1);
+  }
+
+  function handleDecrease() {
+    setQuantity((state) => state - 1);
+  }
+
+  const { addCoffeeToCart } = useCart();
+
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity,
+    };
+    addCoffeeToCart(coffeeToAdd);
+  }
+
+  const formattedPrice = formatMoney(coffee.price);
+
   return (
     <CoffeeCardContainer>
-      <img src={`/coffees/${coffee.photo}`} alt="" />
-      
+      <img src={`/coffees/${coffee.photo}`} />
       <Tags>
-        {coffee.tags.map(tag => (<span key={`${coffee.id}${tag}`}>{tag}</span>))}
+        {coffee.tags.map((tag) => (
+          <span key={`${coffee.id}${tag}`}>{tag}</span>
+        ))}
       </Tags>
 
       <Name>{coffee.name}</Name>
@@ -33,16 +64,22 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
       <CardFooter>
         <div>
           <RegularText size="s">R$</RegularText>
-          <TitleText size="m" color="text" as="strong">{formattedPrice}</TitleText>
+          <TitleText size="m" color="text" as="strong">
+            {formattedPrice}
+          </TitleText>
         </div>
 
         <AddCartWrapper>
-          <QuantityInput />
-          <button>
+          <QuantityInput
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            quantity={quantity}
+          />
+          <button onClick={handleAddToCart}>
             <ShoppingCart weight="fill" size={22} />
           </button>
         </AddCartWrapper>
       </CardFooter>
     </CoffeeCardContainer>
-  )
+  );
 }

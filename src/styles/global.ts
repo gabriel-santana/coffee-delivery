@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-track {
     background: ${({ theme }) => theme.colors["base-button"]}
   }
-  
+
   ::-webkit-scrollbar-thumb {
     border-radius: 2rem;
     background: ${({ theme }) => theme.colors["brand-purple"]}

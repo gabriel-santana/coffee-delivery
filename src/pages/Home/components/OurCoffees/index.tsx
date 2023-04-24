@@ -10,12 +10,11 @@ export function OurCoffees() {
         Nossos cafés
       </TitleText>
 
-      
       <CoffeeList>
         {coffees.map((coffee) => (
-          <CoffeeCard key={coffee.id} coffee={coffee}/>
+          <CoffeeCard key={coffee.id} coffee={coffee} />
         ))}
       </CoffeeList>
     </OurCoffeesContainer>
-  )
+  );
 }
